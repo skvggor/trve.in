@@ -19,37 +19,100 @@ export default function Home() {
   // }
 
   return (mounted && (
-    <main className="p-5">
-      <header>
+    <main className="px-3
+      py-10
+      md:px-5
+      md:py-20"
+    >
+      <header className="group
+        flex
+        flex-row
+        items-center
+        justify-center
+        w-full"
+      >
         <div className="avatar
           h-24
           relative
           rounded-full
-          w-24"
+          mr-3
+          w-24
+          md:h-32
+          md:mr-5
+          md:w-32"
         >
           <Image
             src="/avatar.webp"
             alt="avatar"
             width={200}
             height={200}
-            className="rounded-full
+            className="image-avatar
+              rounded-full
               border-2
-              border-green-700
-              p-0.5"
+              border-gray-700
+              p-0.5
+              group-hover:border-gray-500
+              transition-all
+              duration-500"
           />
 
           <span className="icon-status
             absolute
             bg-green-500
             border-2
+            border-[#020817]
             bottom-2
+            duration-500
             h-4
             right-2
             rounded-full
-            w-4"
+            transition-all
+            w-4
+            md:h-5
+            md:right-3
+            md:w-5"
           />
         </div>
+
+        <div className="holder-text">
+          <h1 className="name
+            font-medium
+            group-hover:text-white
+            text-5xl
+            text-green-100
+            mb-3
+            transition-all
+            duration-500
+            uppercase
+            md:mb-5
+            md:text-6xl
+            md:tracking-tighter"
+          >Skvggor</h1>
+
+          <div className="border-gradient
+            bg-gradient-to-r from-green-900 to-green-300
+            p-px
+            rounded-full"
+          >
+            <div className="bg-[#020817]
+              p-px
+              rounded-full"
+            >
+              <h2 className="current-position
+                font-normal
+                group-hover:text-white
+                text-lg
+                text-center
+                text-green-100
+                transition-all
+                md:text-xl
+                md:tracking-tight"
+              >Front-end Developer</h2>
+            </div>
+          </div>
+        </div>
       </header>
+
       {/* <Button variant="outline" onClick={clickHandler}>
         {theme === "light" && <Sun />}
         {theme === "dark" && <Moon />}
