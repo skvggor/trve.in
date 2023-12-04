@@ -18,6 +18,17 @@ export default function Home() {
   //   setTheme(theme === "dark" ? "light" : "dark")
   // }
 
+  const headerContent = {
+    title: "Skvggor",
+    description: "Front-end Developer",
+    image: {
+      src: "/avatar.webp",
+      alt: "avatar",
+      width: 200,
+      height: 200,
+    },
+  }
+
   return (mounted && (
     <main className="px-3
       py-10
@@ -42,10 +53,10 @@ export default function Home() {
           md:w-32"
         >
           <Image
-            src="/avatar.webp"
-            alt="avatar"
-            width={200}
-            height={200}
+            src={headerContent.image.src}
+            alt={headerContent.image.alt}
+            width={headerContent.image.width}
+            height={headerContent.image.height}
             className="image-avatar
               rounded-full
               border-2
@@ -87,7 +98,7 @@ export default function Home() {
             md:mb-5
             md:text-6xl
             md:tracking-tighter"
-          >Skvggor</h1>
+          >{headerContent.title}</h1>
 
           <div className="border-gradient
             bg-gradient-to-r from-green-900 to-green-300
@@ -107,7 +118,7 @@ export default function Home() {
                 transition-all
                 md:text-xl
                 md:tracking-tight"
-              >Front-end Developer</h2>
+              >{headerContent.description}</h2>
             </div>
           </div>
         </div>
