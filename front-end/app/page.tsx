@@ -209,16 +209,20 @@ export default function Home() {
             md:rounded-xl"
           >
             <div className="cover-art
-              border-2
-              border-green-500
+              ring-2
+              ring-green-500
+              animate-pulse
               mr-3
               rounded-full"
             >
               <Image
-                src="/cover-art.webp"
+                className="image-cover
+                  rounded-full
+                  shadow-xl"
+                src="/coverart.jpg"
                 alt="cover-art"
-                width={64}
-                height={64}
+                width={100}
+                height={100}
               />
             </div>
 
@@ -227,6 +231,21 @@ export default function Home() {
               flex-col
               max-w-md"
             >
+              <span className="label
+                font-light
+                max-w-fit
+                mb-3
+                p-2
+                ring-1
+                ring-green-900
+                rounded-full
+                text-green-500
+                text-xs
+                uppercase"
+              >
+                Listening now
+              </span>
+
               <span className="track
                 font-bold
                 mb-1
