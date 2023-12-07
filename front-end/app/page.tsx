@@ -21,7 +21,7 @@ export default function Home() {
 
   const headerContent = {
     title: "Skvggor",
-    description: "Front-end Developer",
+    currentPosition: "Front-end Developer",
     image: {
       src: "/avatar.webp",
       alt: "avatar",
@@ -52,7 +52,7 @@ export default function Home() {
         w-full
         md:flex-row"
       >
-        <div className="avatar
+        <section className="avatar
           h-24
           mb-3
           relative
@@ -94,9 +94,9 @@ export default function Home() {
             md:right-3
             md:w-5"
           />
-        </div>
+        </section>
 
-        <div className="holder-text">
+        <section className="holder-text">
           <h1 className="name
             duration-500
             font-medium
@@ -111,12 +111,12 @@ export default function Home() {
             md:tracking-tighter"
           >{headerContent.title}</h1>
 
-          <div className="border-gradient
+          <section className="border-gradient
             bg-gradient-to-r from-green-900 to-green-300
             p-px
             rounded-full"
           >
-            <div className="bg-[#020817]
+            <section className="bg-[#020817]
               p-px
               rounded-full"
             >
@@ -129,11 +129,31 @@ export default function Home() {
                 transition-all
                 md:text-xl
                 md:tracking-tight"
-              >{headerContent.description}</h2>
-            </div>
-          </div>
-        </div>
+              >{headerContent.currentPosition}</h2>
+            </section>
+          </section>
+        </section>
       </header>
+
+      <section className="site-content
+        flex
+        flex-col
+        items-center
+        justify-center
+        w-full"
+      >
+        <section className="about-me
+          flex
+          flex-col
+          items-center
+          justify-center"
+        >
+          <h2 className="title
+            font-bold
+            text-2xl"
+          >Low profile problem solver.</h2>
+        </section>
+      </section>
 
       <footer className="site-footer
         flex
@@ -209,10 +229,9 @@ export default function Home() {
             md:rounded-xl"
           >
             <div className="cover-art
+              mr-3
               ring-2
               ring-green-500
-              animate-pulse
-              mr-3
               rounded-full"
             >
               <Image
@@ -242,9 +261,7 @@ export default function Home() {
                 text-green-500
                 text-xs
                 uppercase"
-              >
-                Listening now
-              </span>
+              >Last track played</span>
 
               <span className="track
                 font-bold
