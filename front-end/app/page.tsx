@@ -2,22 +2,12 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { Bike } from "lucide-react"
-// import { Moon, Sun } from "lucide-react"
-// import { useTheme } from "next-themes"
-
-// import { Button } from "@/components/ui/button"
-
+import { Bike, Code2, Disc3, GithubIcon, Linkedin, Twitter } from "lucide-react"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
-  // const { theme, setTheme } = useTheme()
 
   useEffect(() => setMounted(true), [])
-
-  // const clickHandler = () => {
-  //   setTheme(theme === "dark" ? "light" : "dark")
-  // }
 
   const headerContent = {
     title: "Skvggor",
@@ -146,12 +136,173 @@ export default function Home() {
           flex
           flex-col
           items-center
-          justify-center"
+          justify-center
+          mb-3
+          md:mb-10"
         >
           <h2 className="title
             font-bold
-            text-2xl"
+            text-2xl
+            md:text-4xl"
           >Low profile problem solver.</h2>
+        </section>
+
+        <section className="social
+          flex
+          flex-col
+          items-center
+          justify-center"
+        >
+          <ul className="icon-list
+            gap-x-5
+            grid
+            grid-cols-6
+            md:gap-x-10"
+          >
+            <li className="item">
+              <a className="link
+                block
+                duration-500
+                hover:outline-white
+                outline
+                outline-2
+                outline-green-500
+                outline-offset-1
+                p-2
+                rounded-full
+                transition-all"
+                href="https://github.com/skvggor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon
+                  color="#22c55e"
+                  width={28}
+                  height={28}
+                />
+              </a>
+            </li>
+
+            <li className="item">
+              <a className="link
+                block
+                duration-500
+                hover:outline-white
+                outline
+                outline-2
+                outline-green-500
+                outline-offset-1
+                p-2
+                rounded-full
+                transition-all"
+                href="https://leetcode.com/skvggor/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Code2
+                  color="#22c55e"
+                  width={28}
+                  height={28}
+                />
+              </a>
+            </li>
+
+            <li className="item">
+              <a className="link
+                block
+                duration-500
+                hover:outline-white
+                outline
+                outline-2
+                outline-green-500
+                outline-offset-1
+                p-2
+                rounded-full
+                transition-all"
+                href="https://www.linkedin.com/in/marcker"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin
+                  color="#22c55e"
+                  width={28}
+                  height={28}
+                />
+              </a>
+            </li>
+
+            <li className="item">
+              <a className="link
+                block
+                duration-500
+                hover:outline-white
+                outline
+                outline-2
+                outline-green-500
+                outline-offset-1
+                p-2
+                rounded-full
+                transition-all"
+                href="https://twitter.com/skvggor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter
+                  color="#22c55e"
+                  width={28}
+                  height={28}
+                />
+              </a>
+            </li>
+
+            <li className="item">
+              <a className="link
+                block
+                duration-500
+                hover:outline-white
+                outline
+                outline-2
+                outline-green-500
+                outline-offset-1
+                p-2
+                rounded-full
+                transition-all"
+                href="https://www.strava.com/athletes/18616728"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Bike
+                  color="#22c55e"
+                  width={28}
+                  height={28}
+                />
+              </a>
+            </li>
+
+            <li className="item">
+              <a className="link
+                block
+                duration-500
+                hover:outline-white
+                outline
+                outline-2
+                outline-green-500
+                outline-offset-1
+                p-2
+                rounded-full
+                transition-all"
+                href="https://last.fm/user/skvggor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Disc3
+                  color="#22c55e"
+                  width={28}
+                  height={28}
+                />
+              </a>
+            </li>
+          </ul>
         </section>
       </section>
 
@@ -317,13 +468,6 @@ export default function Home() {
           />
         </div>
       </footer>
-
-      {/* <Button variant="outline" onClick={clickHandler}>
-        {theme === "light" && <Sun />}
-        {theme === "dark" && <Moon />}
-
-        <span className="sr-only">Toggle theme: Dark, Light</span>
-      </Button> */}
     </main>)
   )
 }
