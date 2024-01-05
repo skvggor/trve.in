@@ -1,8 +1,6 @@
-"use client"
-
 import { Bike, Code2, Disc3, GithubIcon, Linkedin, Twitter } from "lucide-react"
 
-const Social = () => {
+export default function Social() {
   const socialContent = {
     links: [
       {
@@ -88,5 +86,3 @@ const Social = () => {
     </section>
   )
 }
-
-export default Social

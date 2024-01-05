@@ -1,8 +1,6 @@
-"use client"
-
 import Image from "next/image"
 
-const Header = () => {
+export default function Header() {
   const headerContent = {
     title: "Skvggor",
     currentPosition: "Front-end Developer",
@@ -119,5 +117,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header

@@ -1,8 +1,6 @@
-"use client"
-
 import Image from "next/image"
 
-const ListeningNow = () => {
+export default function ListeningNow() {
   const listeningNowContent = {
     label: "Last track played",
   }
@@ -82,5 +80,3 @@ const ListeningNow = () => {
     </div>
   )
 }
-
-export default ListeningNow

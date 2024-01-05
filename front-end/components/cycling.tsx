@@ -1,15 +1,36 @@
-"use client"
-
 import { Bike } from "lucide-react"
 
-const Cycling = () => {
-  const cyclingContent = {
+async function getData() {
+  try {
+    const response = await fetch(
+      (process.env.APP_ENV === "development"
+        ? process.env.URL_API_DEV
+        : process.env.URL_API_PROD) as string
+    )
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data")
+    }
+
+    return response.json()
+  } catch (error) {
+    console.error("components/cycling", error)
+  }
+}
+
+export default async function Cycling() {
+  const cyclingContent: {
+    currentYear: number
+    distance: string
+  } = {
     currentYear: new Date().getFullYear(),
+    distance: await getData().then((data) => data?.distance),
   }
 
   return (
-    <div
-      className='cycling
+    cyclingContent.distance && (
+      <div
+        className='cycling
         bg-gray-900
         flex
         flex-row
@@ -24,41 +45,40 @@ const Cycling = () => {
         md:mr-3
         md:rounded-xl
         md:w-auto'
-    >
-      <div
-        className='icon
+      >
+        <div
+          className='icon
           mr-3
           -rotate-45'
-      >
-        <Bike color='#22c55e' width={28} height={28} />
-      </div>
+        >
+          <Bike color='#22c55e' width={28} height={28} />
+        </div>
 
-      <div
-        className='total
+        <div
+          className='total
           flex
           flex-col'
-      >
-        <h3
-          className='year
+        >
+          <h3
+            className='year
             font-bold
             mb-1
             text-sm
             text-white'
-        >
-          {cyclingContent.currentYear}
-        </h3>
+          >
+            {cyclingContent.currentYear}
+          </h3>
 
-        <span
-          className='distance
+          <span
+            className='distance
             font-light
             text-lg
             text-white/50'
-        >
-          4.745 km
-        </span>
+          >
+            {cyclingContent.distance} km
+          </span>
+        </div>
       </div>
-    </div>
+    )
   )
 }
-
-export default Cycling

@@ -1,7 +1,3 @@
-"use client"
-
-import { useEffect, useState } from "react"
-
 import Header from "@/components/header"
 import AboutMe from "@/components/aboutMe"
 import Social from "@/components/social"
@@ -10,64 +6,56 @@ import ListeningNow from "@/components/listeningNow"
 import MadeBy from "@/components/madeBy"
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
-
-  const currentYear = new Date().getFullYear()
-
   return (
-    mounted && (
-      <main
-        className='main-content
+    <main
+      className='main-content
+        flex
+        flex-col
+        justify-between
+        min-h-[100dvh]
+        pt-10
+        px-3
+        md:pt-20
+        md:px-5'
+    >
+      <Header />
+
+      <section
+        className='site-content
           flex
           flex-col
-          justify-between
-          min-h-[100dvh]
-          pt-10
-          px-3
-          md:pt-20
-          md:px-5'
+          items-center
+          justify-center
+          w-full'
       >
-        <Header />
+        <AboutMe />
+        <Social />
+      </section>
 
-        <section
-          className='site-content
+      <footer
+        className='site-footer
+          flex
+          flex-col
+          items-center
+          justify-center
+          w-full'
+      >
+        <div
+          className='holder
             flex
             flex-col
             items-center
+            items-stretch
             justify-center
-            w-full'
+            max-w-[768px]
+            md:flex-row'
         >
-          <AboutMe />
-          <Social />
-        </section>
+          <Cycling />
+          <ListeningNow />
+        </div>
 
-        <footer
-          className='site-footer
-            flex
-            flex-col
-            items-center
-            justify-center
-            w-full'
-        >
-          <div
-            className='holder
-              flex
-              flex-col
-              items-center
-              items-stretch
-              justify-center
-              max-w-[768px]
-              md:flex-row'
-          >
-            <Cycling />
-            <ListeningNow />
-          </div>
-
-          <MadeBy />
-        </footer>
-      </main>
-    )
+        <MadeBy />
+      </footer>
+    </main>
   )
 }

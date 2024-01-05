@@ -1,6 +1,4 @@
-"use client"
-
-const AboutMe = () => {
+export default function AboutMe() {
   const aboutMeContent = {
     title: "Low profile problem solver.",
   }
@@ -26,5 +24,3 @@ const AboutMe = () => {
     </section>
   )
 }
-
-export default AboutMe

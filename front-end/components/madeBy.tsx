@@ -1,6 +1,4 @@
-"use client"
-
-const MadeBy = () => {
+export default function MadeBy() {
   const contentMadeBy = {
     label: "Made by",
     author: "Marcos Lima",
@@ -55,5 +53,3 @@ const MadeBy = () => {
     </div>
   )
 }
-
-export default MadeBy

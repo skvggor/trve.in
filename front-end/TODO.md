@@ -1,6 +1,9 @@
 # TODO
 
 - [x] Split components into separate files
+- [x] Fetch cycling data from a API
+- [ ] Fetch music from a API
+- [ ] Add a `error` page
 - [ ] Improve the `README.md`
 - [ ] Add a `LICENSE` file
 - [ ] Light and dark themes
