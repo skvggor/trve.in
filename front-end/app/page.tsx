@@ -37,8 +37,7 @@ export default function Home() {
           flex
           flex-col
           items-center
-          justify-center
-          w-full'
+          justify-center'
       >
         <div
           className='holder
@@ -47,7 +46,7 @@ export default function Home() {
             items-center
             items-stretch
             justify-center
-            max-w-[768px]
+            max-w-[1024px]
             md:flex-row'
         >
           <Cycling />

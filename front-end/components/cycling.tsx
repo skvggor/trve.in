@@ -4,8 +4,8 @@ async function getData() {
   try {
     const response = await fetch(
       (process.env.APP_ENV === "development"
-        ? process.env.URL_API_DEV
-        : process.env.URL_API_PROD) as string
+        ? process.env.URL_STRAVA_API_DEV
+        : process.env.URL_STRAVA_API_PROD) as string
     )
 
     if (!response.ok) {
@@ -31,19 +31,18 @@ export default async function Cycling() {
     cyclingContent.distance && (
       <div
         className='cycling
-        bg-gray-900
         flex
         flex-row
         items-center
+        justify-center
         mb-3
         p-3
-        rounded-t-xl
+        rounded-xl
         w-full
         md:h-auto
         md:justify-center
         md:mb-0
         md:mr-3
-        md:rounded-xl
         md:w-auto'
       >
         <div

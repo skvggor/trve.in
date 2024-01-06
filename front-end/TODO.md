@@ -2,7 +2,7 @@
 
 - [x] Split components into separate files
 - [x] Fetch cycling data from a API
-- [ ] Fetch music from a API
+- [x] Fetch music from a API
 - [ ] Add animations and transitions
 - [ ] Add a `error` page
 - [ ] Improve the `README.md`

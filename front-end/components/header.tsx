@@ -62,7 +62,26 @@ export default function Header() {
             right-2
             rounded-full
             transition-all
+            z-[2]
             w-4
+            md:h-5
+            md:right-3
+            md:w-5'
+        />
+        <span
+          className='icon-status-ping
+            absolute
+            animate-ping
+            bg-green-500
+            bottom-2
+            duration-1000
+            ease-in-out
+            h-4
+            right-2
+            rounded-full
+            transition
+            w-4
+            z-[1]
             md:h-5
             md:right-3
             md:w-5'
