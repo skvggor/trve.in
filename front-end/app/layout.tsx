@@ -9,8 +9,30 @@ import "./globals.css"
 const jost = Jost({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Marcos Lima - Front-end Developer",
-  description: "Front-end Developer",
+  metadataBase: new URL("https://trve.in"),
+  title: "Marcos Lima - Senior Front-end Developer",
+  description: "Low profile problem solver",
+  openGraph: {
+    type: "website",
+    siteName: "Marcos Lima",
+    locale: "pt_BR",
+    url: "https://trve.in",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Image of Marcos Lima - Senior Front-end Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@skvggor",
+    title: "Marcos Lima - Senior Front-end Developer",
+    description: "Low profile problem solver",
+    images: "/og-image.png",
+  },
 }
 
 export default function RootLayout({

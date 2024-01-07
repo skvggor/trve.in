@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Header() {
   const headerContent = {
     title: "Skvggor",
-    currentPosition: "Front-end Developer",
+    currentPosition: "Senior Front-end Developer",
     image: {
       src: "/avatar.webp",
       alt: "avatar",
