@@ -5,7 +5,8 @@ async function getData() {
     const response = await fetch(
       (process.env.APP_ENV === "development"
         ? process.env.URL_STRAVA_API_DEV
-        : process.env.URL_STRAVA_API_PROD) as string
+        : process.env.URL_STRAVA_API_PROD) as string,
+      { next: { revalidate: 0 } }
     )
 
     if (!response.ok) {
