@@ -6,7 +6,7 @@ async function getData() {
       (process.env.APP_ENV === "development"
         ? process.env.URL_STRAVA_API_DEV
         : process.env.URL_STRAVA_API_PROD) as string,
-      { next: { revalidate: 1 } }
+      { cache: "no-cache" }
     )
 
     if (!response.ok) {

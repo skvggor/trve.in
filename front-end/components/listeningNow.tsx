@@ -6,7 +6,7 @@ async function getData() {
       (process.env.APP_ENV === "development"
         ? process.env.URL_LASTFM_API_DEV
         : process.env.URL_LASTFM_API_PROD) as string,
-      { next: { revalidate: 1 } }
+      { cache: "no-store" }
     )
 
     if (!response.ok) {
