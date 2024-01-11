@@ -21,17 +21,17 @@ async function getData() {
 
 export default async function Cycling() {
   const cyclingContent: {
-    currentYear: number
-    distance: string
+    currentYear: number;
+    distance: string;
   } = {
     currentYear: new Date().getFullYear(),
     distance: await getData().then((data) => data?.distance),
-  }
+  };
 
   return (
     cyclingContent.distance && (
       <div
-        className='cycling
+        className="cycling
         flex
         flex-row
         items-center
@@ -44,41 +44,41 @@ export default async function Cycling() {
         md:justify-center
         md:mb-0
         md:mr-3
-        md:w-auto'
+        md:w-auto"
       >
         <div
-          className='icon
+          className="icon
           mr-3
-          -rotate-45'
+          -rotate-45"
         >
-          <Bike color='#22c55e' width={28} height={28} />
+          <Bike color="#22c55e" width={28} height={28} />
         </div>
 
         <div
-          className='total
+          className="total
           flex
-          flex-col'
+          flex-col"
         >
           <h3
-            className='year
+            className="year
             font-bold
             mb-1
             text-sm
-            text-white'
+            text-white"
           >
             {cyclingContent.currentYear}
           </h3>
 
           <span
-            className='distance
+            className="distance
             font-light
             text-lg
-            text-white/50'
+            text-white/50"
           >
             {cyclingContent.distance} km
           </span>
         </div>
       </div>
     )
-  )
+  );
 }

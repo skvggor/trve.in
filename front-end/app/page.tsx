@@ -1,14 +1,15 @@
-import Header from "@/components/header"
-import AboutMe from "@/components/aboutMe"
-import Social from "@/components/social"
-import Cycling from "@/components/cycling"
-import ListeningNow from "@/components/listeningNow"
-import MadeBy from "@/components/madeBy"
+import Header from "@/components/header";
+import AboutMe from "@/components/aboutMe";
+import Social from "@/components/social";
+import Cycling from "@/components/cycling";
+import ListeningNow from "@/components/listeningNow";
+import MadeBy from "@/components/madeBy";
 
 export default function Home() {
   return (
     <main
-      className='main-content
+      className="main-content
+        bg-gray-950
         flex
         flex-col
         justify-between
@@ -16,38 +17,39 @@ export default function Home() {
         pt-10
         px-3
         md:pt-20
-        md:px-5'
+        md:px-5
+        tall:min-h-[200dvh]"
     >
       <Header />
 
       <section
-        className='site-content
+        className="site-content
           flex
           flex-col
           items-center
           justify-center
-          w-full'
+          w-full"
       >
         <AboutMe />
         <Social />
       </section>
 
       <footer
-        className='site-footer
+        className="site-footer
           flex
           flex-col
           items-center
-          justify-center'
+          justify-center"
       >
         <div
-          className='holder
+          className="holder
             flex
             flex-col
             items-center
             items-stretch
             justify-center
             max-w-[1024px]
-            md:flex-row'
+            md:flex-row"
         >
           <Cycling />
           <ListeningNow />
@@ -56,5 +58,5 @@ export default function Home() {
         <MadeBy />
       </footer>
     </main>
-  )
+  );
 }
