@@ -15,7 +15,7 @@ async function getData() {
 
     return response.json();
   } catch (error) {
-    console.error("components/cycling", error);
+    console.error("components/listeningNow", error);
   }
 }
 
@@ -26,10 +26,18 @@ export default async function ListeningNow() {
 
   const listeningNowContent = {
     coverArt:
-      currentTrack?.image.reduce((acc: string, image: any) => {
-        if (image.size === "large") acc = image["#text"];
-        return acc;
-      }) || "/default-cover-art.webp",
+      currentTrack?.image.reduce(
+        (
+          acc: string,
+          image: {
+            size: string;
+            "#text": string;
+          }
+        ) => {
+          if (image.size === "large") acc = image["#text"];
+          return acc;
+        }
+      ) || "/default-cover-art.webp",
     artist: currentTrack?.artist["#text"],
     track: currentTrack?.name,
     status: currentTrack?.["@attr"]?.nowplaying,
