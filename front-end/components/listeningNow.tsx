@@ -44,7 +44,8 @@ export default async function ListeningNow() {
           flex
           flex-row
           items-center
-          justify-center
+          justify-start
+          min-w-[350px]
           p-3
           relative
           rounded-xl
