@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Loading from "@/components/loading";
+
 async function getData() {
   try {
     const response = await fetch(
@@ -45,10 +47,9 @@ export default async function ListeningNow() {
 
   const label = listeningNowContent.status ? "Listening now" : "Last played";
 
-  return (
-    currentTrack && (
-      <div
-        className="listening-now
+  return currentTrack ? (
+    <div
+      className="listening-now
           flex
           flex-row
           items-center
@@ -58,34 +59,34 @@ export default async function ListeningNow() {
           relative
           rounded-xl
           shadow-2xl"
-      >
-        <div
-          className="cover-art
+    >
+      <div
+        className="cover-art
             mr-3
             rounded-full
             shadow-2xl
             z-10"
-        >
-          <Image
-            className={`image-cover
+      >
+        <Image
+          className={`image-cover
               rounded-full
               shadow-2xl
               ${listeningNowContent.status ? "animate-pulse" : ""}`}
-            src={listeningNowContent.coverArt}
-            alt="Cover art"
-            width={100}
-            height={100}
-          />
-        </div>
-        <div
-          className="track-info
+          src={listeningNowContent.coverArt}
+          alt="Cover art"
+          width={100}
+          height={100}
+        />
+      </div>
+      <div
+        className="track-info
             flex
             flex-col
             max-w-md
             z-10"
-        >
-          <span
-            className="label
+      >
+        <span
+          className="label
               font-light
               max-w-fit
               mb-3
@@ -96,32 +97,32 @@ export default async function ListeningNow() {
               text-green-500
               text-xs
               uppercase"
-          >
-            {label}
-          </span>
+        >
+          {label}
+        </span>
 
-          <span
-            className="track
+        <span
+          className="track
               font-bold
               mb-1
               text-lg
               text-white"
-          >
-            {listeningNowContent.track}
-          </span>
+        >
+          {listeningNowContent.track}
+        </span>
 
-          <span
-            className="artist
+        <span
+          className="artist
               font-medium
               text-base
               text-white/50
               uppercase"
-          >
-            {listeningNowContent.artist}
-          </span>
-        </div>
-        <div
-          className="background-with-blur
+        >
+          {listeningNowContent.artist}
+        </span>
+      </div>
+      <div
+        className="background-with-blur
             absolute
             bg-gray-900
             h-full
@@ -131,19 +132,20 @@ export default async function ListeningNow() {
             rounded-xl
             w-full
             z-0"
-        >
-          <Image
-            className="image-background
+      >
+        <Image
+          className="image-background
               blur-2xl
               rounded-xl
               saturate-200"
-            src={listeningNowContent.coverArt}
-            alt="Cover art"
-            width={150}
-            height={150}
-          />
-        </div>
+          src={listeningNowContent.coverArt}
+          alt="Cover art"
+          width={150}
+          height={150}
+        />
       </div>
-    )
+    </div>
+  ) : (
+    <Loading serviceName="`last.fm`" />
   );
 }

@@ -5,7 +5,8 @@
 - [x] Fetch music from a API
 - [x] Fix layout in horizontal mobile view
 - [x] Clean up the code and remove unused files
-- [ ] Add animations and transitions
+- [x] Add loading for api services
+- [ ] Add global animations and transitions
 - [ ] Add a `error` page
 - [ ] Improve the `README.md`
 - [ ] Add a `LICENSE` file
