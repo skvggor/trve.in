@@ -2,7 +2,7 @@ export default function MadeBy() {
   const contentMadeBy = {
     label: "Made by",
     author: "Marcos Lima",
-  }
+  };
 
   return (
     <div
