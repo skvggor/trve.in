@@ -4,6 +4,4 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN cargo install --path .
-
-CMD ["rust-api-axum"]
+CMD ["./bin/rust-api-axum"]
