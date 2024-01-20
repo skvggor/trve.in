@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Status from "@/components/status";
+
 export default function Header() {
   const headerContent = {
     title: "skvggor",
@@ -120,6 +122,7 @@ export default function Header() {
             transition-all
             uppercase
             md:mb-5
+            md:ml-3
             md:text-6xl
             md:tracking-tighter"
         >
@@ -153,6 +156,10 @@ export default function Header() {
               {headerContent.currentPosition}
             </h2>
           </section>
+        </section>
+
+        <section className="holder-status">
+          <Status />
         </section>
       </section>
     </header>

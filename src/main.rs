@@ -9,6 +9,7 @@ use axum::{routing::get, Json, Router};
 
 #[derive(Serialize)]
 struct Status {
+    time: String,
     status: String,
 }
 
@@ -18,7 +19,7 @@ fn get_now() -> DateTime<Utc> {
 }
 
 fn get_utc_time() -> String {
-    let utc_time: String = get_now().format("%H:%M:%S").to_string();
+    let utc_time: String = get_now().format("%H:%M").to_string();
     utc_time
 }
 
@@ -62,6 +63,7 @@ async fn response_json() -> Json<Status> {
     let current_status: String = get_status();
 
     let status: Status = Status {
+        time: get_utc_time(),
         status: current_status,
     };
 
