@@ -30,21 +30,23 @@ fn get_week_day() -> String {
 
 fn get_status() -> String {
     /*
-        Status:
-        - work: 08:00:00 - 18:00:00
-        - lunch: 12:00:00 - 14:00:00
-        - sleep: 00:00:00 - 06:00:00
+    Status:
         - weekend: Saturday, Sunday
+        - sleep: 00:00 - 07:59
+        - lunch: 12:00 - 14:00
+        - work: 08:00 - 18:00
+        - free: 18:01 - 23:59
     */
 
     let utc_time: String = get_utc_time();
     let week_day: String = get_week_day();
     let mut status: String = "none".to_string();
 
-    let work: bool = utc_time >= "08:00:00".to_string() && utc_time < "18:00:00".to_string();
-    let lunch: bool = utc_time >= "12:00:00".to_string() && utc_time < "14:00:00".to_string();
-    let sleep: bool = utc_time >= "00:00:00".to_string() && utc_time < "06:00:00".to_string();
     let weekend: bool = week_day == "Saturday".to_string() || week_day == "Sunday".to_string();
+    let sleep: bool = utc_time >= "00:00".to_string() && utc_time < "07:59".to_string();
+    let lunch: bool = utc_time >= "12:00".to_string() && utc_time < "14:00".to_string();
+    let work: bool = utc_time >= "08:00".to_string() && utc_time < "18:00".to_string();
+    let free: bool = utc_time >= "18:01".to_string() && utc_time < "23:59".to_string();
 
     if weekend {
         status = "weekend".to_string();
@@ -54,6 +56,8 @@ fn get_status() -> String {
         status = "lunch".to_string();
     } else if work {
         status = "work".to_string();
+    } else if free {
+        status = "free".to_string();
     }
 
     status
@@ -99,4 +103,12 @@ async fn main() {
         .unwrap();
 
     println!("Server running on http://{}", final_addr);
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get_status() {}
 }
