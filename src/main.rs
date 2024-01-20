@@ -14,7 +14,7 @@ struct Status {
 
 fn get_now() -> DateTime<Utc> {
     let now: DateTime<Utc> = Utc::now();
-    now
+    now - chrono::Duration::hours(3)
 }
 
 fn get_utc_time() -> String {
