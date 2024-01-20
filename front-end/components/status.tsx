@@ -1,4 +1,11 @@
-import { BatteryCharging, BatteryWarning, Disc2, Laptop, Laugh } from "lucide-react";
+import {
+  BatteryCharging,
+  Bike,
+  BatteryWarning,
+  Disc2,
+  Laptop,
+  Laugh
+} from "lucide-react";
 
 import Loading from "@/components/loading";
 
@@ -33,21 +40,11 @@ async function getData() {
 }
 
 const statuses: Record<string, Status> = {
-  work: {
+  weekend: {
     color: "text-green-500",
-    text: "At work.",
-    icon: <Laptop
+    text: "Enjoying the weekend.",
+    icon: <Laugh
       color="#22c55e"
-      className="mr-1"
-      width={24}
-      height={24}
-    />,
-  },
-  lunch: {
-    color: "text-yellow-500",
-    text: "Having lunch.",
-    icon: <BatteryCharging
-      color="#eab308"
       className="mr-1"
       width={24}
       height={24}
@@ -63,10 +60,30 @@ const statuses: Record<string, Status> = {
       height={24}
     />,
   },
-  weekend: {
+  lunch: {
+    color: "text-yellow-500",
+    text: "Having lunch.",
+    icon: <BatteryCharging
+      color="#eab308"
+      className="mr-1"
+      width={24}
+      height={24}
+    />,
+  },
+  work: {
     color: "text-green-500",
-    text: "Enjoying the weekend.",
-    icon: <Laugh
+    text: "At work.",
+    icon: <Laptop
+      color="#22c55e"
+      className="mr-1"
+      width={24}
+      height={24}
+    />,
+  },
+  free: {
+    color: "text-green-500",
+    text: "Enjoying the life.",
+    icon: <Bike
       color="#22c55e"
       className="mr-1"
       width={24}
