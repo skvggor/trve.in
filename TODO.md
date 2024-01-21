@@ -8,7 +8,7 @@
 - [x] Add loading for api services
 - [x] Add a component that indicates the current activity based on the time and day of the week
 - [x] API in Rust using axum
-- [ ] Add unit tests for the API
+- [x] Add unit tests for the API
 - [ ] Add global animations and transitions
 - [ ] Add a `error` page
 - [ ] Improve the `README.md`

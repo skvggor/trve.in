@@ -18,6 +18,8 @@ fi
 rustc --version
 cargo --version
 
+echo "-------------------"
+
 # build
-cargo build --release
+cargo test && cargo build --release
 cp target/release/rust-api-axum bin
