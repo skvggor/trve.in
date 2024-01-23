@@ -44,60 +44,60 @@ const statuses: Record<string, Status> = {
     color: "text-green-500",
     text: "Enjoying the weekend.",
     icon: <Laugh
-      color="#22c55e"
       className="mr-1"
-      width={24}
+      color="#22c55e"
       height={24}
+      width={24}
     />,
   },
   sleep: {
     color: "gray-500",
     text: "Sleeping.",
     icon: <BatteryWarning
-      color="#6b7280"
       className="mr-1"
-      width={24}
+      color="#6b7280"
       height={24}
+      width={24}
     />,
   },
   lunch: {
     color: "text-yellow-500",
     text: "Having lunch.",
     icon: <BatteryCharging
-      color="#eab308"
       className="mr-1"
-      width={24}
+      color="#eab308"
       height={24}
+      width={24}
     />,
   },
   work: {
     color: "text-green-500",
     text: "At work.",
     icon: <Laptop
-      color="#22c55e"
       className="mr-1"
-      width={24}
+      color="#22c55e"
       height={24}
+      width={24}
     />,
   },
   free: {
     color: "text-green-500",
     text: "Enjoying the life.",
     icon: <Bike
-      color="#22c55e"
       className="mr-1"
-      width={24}
+      color="#22c55e"
       height={24}
+      width={24}
     />,
   },
   listening: {
     color: "text-green-500",
     text: "Listening to music.",
     icon: <Disc2
-      color="#22c55e"
       className="mr-1"
-      width={24}
+      color="#22c55e"
       height={24}
+      width={24}
     />,
   },
 };
@@ -123,8 +123,7 @@ export default async function Status() {
         md:ml-4"
     >
       <span
-        className={
-          `flex
+        className={`flex
           items-center
           mr-1
           ${statusContent.status.color}`
