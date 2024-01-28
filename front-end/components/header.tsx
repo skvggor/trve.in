@@ -121,7 +121,10 @@ export default async function Header() {
         <span
           className={`icon-status
             absolute
-            ${statusIndicators[headerContent.statusFromAPI.status].indicatorBg}
+            ${
+              statusIndicators[`${headerContent.statusFromAPI.status}`]
+                .indicatorBg
+            }
             border-[#020817]
             border-2
             bottom-2
@@ -139,8 +142,11 @@ export default async function Header() {
         <span
           className={`icon-status-ping
             absolute
-            ${statusIndicators[headerContent.statusFromAPI.status].animate}
-            ${statusIndicators[headerContent.statusFromAPI.status].indicatorBg}
+            ${statusIndicators[`${headerContent.statusFromAPI.status}`].animate}
+            ${
+              statusIndicators[`${headerContent.statusFromAPI.status}`]
+                .indicatorBg
+            }
             bottom-2
             duration-1000
             ease-in-out

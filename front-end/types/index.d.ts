@@ -13,7 +13,7 @@ export interface IStatusComponentProps {
 
 export interface IStatusData {
   time: string;
-  status: string;
+  status: IStatus;
 }
 
 export interface IImage {
@@ -27,7 +27,10 @@ export interface IHeaderContent {
   title: string;
   currentPosition: (string | JSX.Element)[];
   image: IImage;
-  statusFromAPI: IStatusData;
+  statusFromAPI: {
+    time: string;
+    status: string;
+  };
 }
 
 export interface IStatusIndicator {
