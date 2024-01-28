@@ -4,110 +4,58 @@ import {
   BatteryWarning,
   Disc2,
   Laptop,
-  Laugh
+  Laugh,
 } from "lucide-react";
 
 import Loading from "@/components/loading";
+import { IStatus, IStatusData, IStatusComponentProps } from "@/types";
 
-interface Status {
-  color: string;
-  text: string;
-  icon: JSX.Element;
-}
-
-interface StatusData {
-  time: string;
-  status: Status;
-}
-
-async function getData() {
-  try {
-    const response = await fetch(
-      (process.env.APP_ENV === "development"
-        ? process.env.URL_STATUS_API_DEV
-        : process.env.URL_STATUS_API_PROD) as string,
-      { cache: "no-cache" }
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    return response.json();
-  } catch (error) {
-    console.error("components/status", error);
-  }
-}
-
-const statuses: Record<string, Status> = {
+const statuses: Record<string, IStatus> = {
   weekend: {
     color: "text-green-500",
     text: "Enjoying the weekend.",
-    icon: <Laugh
-      className="mr-1"
-      color="#22c55e"
-      height={24}
-      width={24}
-    />,
+    icon: <Laugh className="mr-1" color="#22c55e" height={24} width={24} />,
   },
   sleep: {
     color: "gray-500",
     text: "Sleeping.",
-    icon: <BatteryWarning
-      className="mr-1"
-      color="#6b7280"
-      height={24}
-      width={24}
-    />,
+    icon: (
+      <BatteryWarning className="mr-1" color="#6b7280" height={24} width={24} />
+    ),
   },
   lunch: {
     color: "text-yellow-500",
     text: "Having lunch.",
-    icon: <BatteryCharging
-      className="mr-1"
-      color="#eab308"
-      height={24}
-      width={24}
-    />,
+    icon: (
+      <BatteryCharging
+        className="mr-1"
+        color="#eab308"
+        height={24}
+        width={24}
+      />
+    ),
   },
   work: {
-    color: "text-green-500",
+    color: "text-red-700",
     text: "At work.",
-    icon: <Laptop
-      className="mr-1"
-      color="#22c55e"
-      height={24}
-      width={24}
-    />,
+    icon: <Laptop className="mr-1" color="#b91c1c" height={24} width={24} />,
   },
   free: {
     color: "text-green-500",
     text: "Enjoying the life.",
-    icon: <Bike
-      className="mr-1"
-      color="#22c55e"
-      height={24}
-      width={24}
-    />,
+    icon: <Bike className="mr-1" color="#22c55e" height={24} width={24} />,
   },
   listening: {
-    color: "text-green-500",
+    color: "text-violet-600",
     text: "Listening to music.",
-    icon: <Disc2
-      className="mr-1"
-      color="#22c55e"
-      height={24}
-      width={24}
-    />,
+    icon: <Disc2 className="mr-1" color="#7c3aed" height={24} width={24} />,
   },
 };
 
-export default async function Status() {
-  const data = await getData().then((data) => data);
-
-  const statusContent: StatusData = {
-    time: data?.time,
-    status: statuses[data?.status],
+export default async function Status({ dataFromAPI }: IStatusComponentProps) {
+  const statusContent: IStatusData = {
+    time: dataFromAPI?.time,
+    status: statuses[`${dataFromAPI?.status}`],
   };
 
   return statusContent.status ? (
@@ -118,7 +66,7 @@ export default async function Status() {
         flex
         items-center
         mt-2
-        text-gray-400
+        text-gray-600
         w-full
         md:ml-4"
     >
@@ -126,26 +74,26 @@ export default async function Status() {
         className={`flex
           items-center
           mr-1
-          ${statusContent.status.color}`
-        }
+          ${statusContent.status.color}`}
       >
         {statusContent.status.icon}
-        <span className="time
+        <span
+          className="time
           font-bold
           mr-1"
         >
           {statusContent.time}
         </span>
-
-        <span className="utc-time
+        <span
+          className="utc-time
           text-xs"
         >
-          (UTC -03:00):
+          (UTC -03:00) &#8213;
         </span>
       </span>
 
       {statusContent.status.text}
-    </span >
+    </span>
   ) : (
     <Loading />
   );

@@ -1,9 +1,31 @@
 import Image from "next/image";
 
 import Status from "@/components/status";
+import { IHeaderContent, IStatusIndicator } from "@/types";
 
-export default function Header() {
-  const headerContent = {
+async function getData() {
+  try {
+    const response = await fetch(
+      (process.env.APP_ENV === "development"
+        ? process.env.URL_STATUS_API_DEV
+        : process.env.URL_STATUS_API_PROD) as string,
+      { cache: "no-cache" }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("components/status", error);
+  }
+}
+
+export default async function Header() {
+  const data = await getData().then((data) => data);
+
+  const headerContent: IHeaderContent = {
     title: "skvggor",
     currentPosition: [
       "Senior Front-end Developer at ",
@@ -24,6 +46,37 @@ export default function Header() {
       alt: "avatar",
       width: 200,
       height: 200,
+    },
+    statusFromAPI: {
+      time: data.time,
+      status: data.status,
+    },
+  };
+
+  const statusIndicators: Record<string, IStatusIndicator> = {
+    weekend: {
+      indicatorBg: "bg-green-500",
+      animate: "animate-ping",
+    },
+    sleep: {
+      indicatorBg: "bg-gray-400",
+      animate: "animate-none",
+    },
+    lunch: {
+      indicatorBg: "bg-yellow-500",
+      animate: "animate-none",
+    },
+    work: {
+      indicatorBg: "bg-red-700",
+      animate: "animate-none",
+    },
+    free: {
+      indicatorBg: "bg-green-500",
+      animate: "animate-ping",
+    },
+    listening: {
+      indicatorBg: "bg-violet-600",
+      animate: "animate-ping",
     },
   };
 
@@ -66,9 +119,9 @@ export default function Header() {
         />
 
         <span
-          className="icon-status
+          className={`icon-status
             absolute
-            bg-green-500
+            ${statusIndicators[headerContent.statusFromAPI.status].indicatorBg}
             border-[#020817]
             border-2
             bottom-2
@@ -81,13 +134,13 @@ export default function Header() {
             w-4
             md:h-5
             md:right-3
-            md:w-5"
+            md:w-5`}
         />
         <span
-          className="icon-status-ping
+          className={`icon-status-ping
             absolute
-            animate-ping
-            bg-green-500
+            ${statusIndicators[headerContent.statusFromAPI.status].animate}
+            ${statusIndicators[headerContent.statusFromAPI.status].indicatorBg}
             bottom-2
             duration-1000
             ease-in-out
@@ -99,7 +152,7 @@ export default function Header() {
             z-[1]
             md:h-5
             md:right-3
-            md:w-5"
+            md:w-5`}
         />
       </section>
 
@@ -159,7 +212,7 @@ export default function Header() {
         </section>
 
         <section className="holder-status">
-          <Status />
+          <Status dataFromAPI={headerContent.statusFromAPI} />
         </section>
       </section>
     </header>
