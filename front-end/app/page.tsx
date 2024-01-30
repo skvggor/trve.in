@@ -2,7 +2,7 @@ import Header from "@/components/header";
 import AboutMe from "@/components/aboutMe";
 import Social from "@/components/social";
 import Cycling from "@/components/cycling";
-import ListeningNow from "@/components/listeningNow";
+import Listening from "@/components/listening";
 import MadeBy from "@/components/madeBy";
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
             md:flex-row"
         >
           <Cycling />
-          <ListeningNow />
+          <Listening />
         </div>
 
         <MadeBy />
