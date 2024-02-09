@@ -37,7 +37,7 @@ export default function Social() {
       {
         id: 5,
         title: "Strava",
-        href: "https://www.strava.com/athletes/18616724",
+        href: "https://www.strava.com/athletes/18616728",
         icon: <Bike color="#22c55e" width={24} height={24} />,
       },
       {
