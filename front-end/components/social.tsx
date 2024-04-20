@@ -7,8 +7,10 @@ import {
   Twitter,
 } from "lucide-react";
 
+import { ISocial } from "@/types";
+
 export default function Social() {
-  const socialContent = {
+  const socialContent: ISocial = {
     links: [
       {
         id: 1,

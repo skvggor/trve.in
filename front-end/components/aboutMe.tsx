@@ -1,3 +1,5 @@
+import { IAboutMe } from "@/types";
+
 export default function AboutMe() {
   const problemWord = (
     <span
@@ -9,8 +11,12 @@ export default function AboutMe() {
     </span>
   );
 
-  const aboutMeContent = {
-    title: ["Low profile ", problemWord, " solver."],
+  const aboutMeContent: IAboutMe = {
+    title: [
+      "Low profile ",
+      problemWord,
+      " solver."
+    ],
   };
 
   return (

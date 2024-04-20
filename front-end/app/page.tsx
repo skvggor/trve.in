@@ -4,6 +4,7 @@ import Social from "@/components/social";
 import Cycling from "@/components/cycling";
 import Listening from "@/components/listening";
 import MadeBy from "@/components/madeBy";
+import Mastodon from "@/components/mastodon";
 
 export default function Home() {
   return (
@@ -56,6 +57,7 @@ export default function Home() {
         </div>
 
         <MadeBy />
+        <Mastodon />
       </footer>
     </main>
   );

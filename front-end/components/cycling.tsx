@@ -1,6 +1,7 @@
 import { Bike } from "lucide-react";
 
 import Loading from "@/components/loading";
+import { ICycling } from "@/types";
 
 async function getData() {
   try {
@@ -22,10 +23,7 @@ async function getData() {
 }
 
 export default async function Cycling() {
-  const cyclingContent: {
-    currentYear: number;
-    distance: string;
-  } = {
+  const cyclingContent: ICycling = {
     currentYear: new Date().getFullYear(),
     distance: await getData().then((data) => data?.distance),
   };

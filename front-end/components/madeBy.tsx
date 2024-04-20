@@ -1,5 +1,7 @@
+import { IMadeBy } from "@/types";
+
 export default function MadeBy() {
-  const contentMadeBy = {
+  const contentMadeBy: IMadeBy = {
     label: "Made by",
     author: "Marcos Lima",
   };
@@ -40,6 +42,8 @@ export default function MadeBy() {
         >
           {contentMadeBy.author}
         </a>
+        {" "}
+        in BR 🇧🇷
       </span>
 
       <span

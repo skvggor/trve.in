@@ -37,3 +37,32 @@ export interface IStatusIndicator {
   indicatorBg: string;
   animate: string;
 }
+
+export interface ISocial {
+  links: {
+    id: number;
+    title: string;
+    href: string;
+    icon: JSX.Element;
+  }[];
+}
+
+export interface IMastodon {
+  rel: string;
+  text: string;
+  link: string;
+}
+
+export interface IMadeBy {
+  label: string;
+  author: string;
+}
+
+export interface ICycling {
+  currentYear: number;
+  distance: string;
+}
+
+export interface IAboutMe {
+  title: (string | JSX.Element)[];
+}
