@@ -8,9 +8,9 @@ const jost = Jost({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trve.in"),
-  title: "Marcos Lima - Senior Front-end Developer",
+  title: "Marcos Lima - Father, cyclist, skateboarder & senior developer",
   description:
-    "Marcos Lima, Senior Front-end Developer. Low profile problem solver",
+    "marcos lima, father, cyclist, skateboarder, senior developer",
   openGraph: {
     type: "website",
     siteName: "Marcos Lima",
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Image of Marcos Lima - Senior Front-end Developer",
+        alt: "Image of Marcos Lima - Father, cyclist, skateboarder & senior developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@skvggor",
-    title: "Marcos Lima - Senior Front-end Developer",
-    description: "Low profile problem solver",
+    title: "Marcos Lima - Father, cyclist, skateboarder & senior developer",
+    description: "Father, cyclist, skateboarder & senior developer",
     images: "/og-image.png",
   },
 };
@@ -41,7 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={jost.className}>{children}</body>
+      <body className={ jost.className }>
+        { children }
+      </body>
     </html>
   );
 }

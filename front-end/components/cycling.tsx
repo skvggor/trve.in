@@ -50,7 +50,11 @@ export default async function Cycling() {
           mr-3
           -rotate-45"
       >
-        <Bike color="#22c55e" width={28} height={28} />
+        <Bike
+          color="#eab308"
+          width={ 28 }
+          height={ 28 }
+        />
       </div>
 
       <div
@@ -65,7 +69,7 @@ export default async function Cycling() {
             text-sm
             text-white"
         >
-          {cyclingContent.currentYear}
+          { cyclingContent.currentYear }
         </h3>
 
         <span
@@ -74,11 +78,11 @@ export default async function Cycling() {
             text-lg
             text-white/50"
         >
-          {cyclingContent.distance} km
+          { cyclingContent.distance } km
         </span>
       </div>
     </div>
   ) : (
-    <Loading serviceName="`api strava`" />
+    <Loading serviceName="api strava" />
   );
 }

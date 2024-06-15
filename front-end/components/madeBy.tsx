@@ -1,10 +1,7 @@
 import { IMadeBy } from "@/types";
 
 export default function MadeBy() {
-  const contentMadeBy: IMadeBy = {
-    label: "Made by",
-    author: "Marcos Lima",
-  };
+  const contentMadeBy: IMadeBy = { label: "Made by", author: "Marcos Lima" };
 
   return (
     <div
@@ -17,7 +14,7 @@ export default function MadeBy() {
     >
       <span
         className="line
-          bg-green-500
+          bg-yellow-500
           block
           h-0.5
           rounded-full
@@ -31,24 +28,24 @@ export default function MadeBy() {
           text-sm
           text-white"
       >
-        {contentMadeBy.label}{" "}
+        { contentMadeBy.label }{ " " }
         <a
           className="link
             duration-500
-            hover:text-green-500
+            hover:text-yellow-500
             transition-all
             underline"
           href="https://github.com/skvggor"
         >
-          {contentMadeBy.author}
+          { contentMadeBy.author }
         </a>
-        {" "}
+        { " " }
         in BR 🇧🇷
       </span>
 
       <span
         className="line
-          bg-green-500
+          bg-yellow-500
           block
           h-0.5
           rounded-full

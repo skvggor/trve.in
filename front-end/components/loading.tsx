@@ -3,9 +3,7 @@
 import { useEffect, useState } from "react";
 import { HeartCrack, Loader2 } from "lucide-react";
 
-type LoadingProps = {
-  serviceName?: string;
-};
+type LoadingProps = { serviceName?: string; };
 
 export default function Loading({ serviceName }: LoadingProps) {
   const [serviceStatus, setServiceStatus] = useState<boolean>(true);
@@ -36,25 +34,25 @@ export default function Loading({ serviceName }: LoadingProps) {
         relative
         rounded-xl"
     >
-      {serviceStatus ? (
+      { serviceStatus ? (
         <>
           <Loader2
             className="animate-spin
-            duration-500
-            mr-3"
-            color="#22c55e"
-            width={32}
-            height={32}
+              duration-500
+              mr-3"
+            color="#eab308"
+            width={ 32 }
+            height={ 32 }
           />
           <span
             className="loader
-            animate-pulse
-            duration-500
-            block
-            text-white/30
-            text-sm"
+              animate-pulse
+              duration-500
+              block
+              text-white/30
+              text-sm"
           >
-            {messages.loading}
+            { messages.loading }
           </span>
         </>
       ) : (
@@ -62,8 +60,8 @@ export default function Loading({ serviceName }: LoadingProps) {
           <HeartCrack
             className="mr-3 opacity"
             color="#FFFFFF33"
-            width={24}
-            height={24}
+            width={ 24 }
+            height={ 24 }
           />
           <span
             className="loader
@@ -71,10 +69,10 @@ export default function Loading({ serviceName }: LoadingProps) {
               text-white/20
               text-sm"
           >
-            {messages.serviceUnavailable}
+            { messages.serviceUnavailable }
           </span>
         </>
-      )}
+      ) }
     </div>
   );
 }

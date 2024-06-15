@@ -23,10 +23,7 @@ async function getData() {
 
 export default async function Listening() {
   const MAX_LENGTH = 30;
-
-  const currentTrack = await getData().then(
-    (data) => data?.recenttracks?.track[0]
-  );
+  const currentTrack = await getData().then((data) => data?.recenttracks?.track[0]);
 
   const listeningContent = {
     coverArt:
@@ -74,7 +71,7 @@ export default async function Listening() {
           z-10"
       >
         <Image
-          className={`image-cover
+          className={ `image-cover
             border-[#FFF]/10
             border-[5px]
             border-solid
@@ -83,11 +80,11 @@ export default async function Listening() {
             rounded-full
             shadow-2xl
             w-full
-            ${listeningContent.status ? "animate-pulse" : ""}`}
-          src={listeningContent.coverArt}
+            ${listeningContent.status ? "animate-pulse" : ""}` }
+          src={ listeningContent.coverArt }
           alt="Cover art"
-          width={100}
-          height={100}
+          width={ 100 }
+          height={ 100 }
         />
       </div>
       <div
@@ -104,13 +101,13 @@ export default async function Listening() {
             mb-3
             p-2
             ring-1
-            ring-green-900
+            ring-yellow-400
             rounded-full
-            text-green-500
+            text-yellow-500
             text-xs
             uppercase"
         >
-          {label}
+          { label }
         </span>
 
         <span
@@ -120,9 +117,9 @@ export default async function Listening() {
             text-lg
             text-white"
         >
-          {listeningContent.track.length > MAX_LENGTH
+          { listeningContent.track.length > MAX_LENGTH
             ? `${listeningContent.track.substring(0, MAX_LENGTH)}...`
-            : listeningContent.track}
+            : listeningContent.track }
         </span>
 
         <span
@@ -132,7 +129,7 @@ export default async function Listening() {
             text-white/50
             uppercase"
         >
-          {listeningContent.artist}
+          { listeningContent.artist }
         </span>
       </div>
       <div
@@ -152,7 +149,7 @@ export default async function Listening() {
             blur-2xl
             rounded-xl
             saturate-200"
-          src={listeningContent.coverArt}
+          src={ listeningContent.coverArt }
           alt="Cover art"
           width={150}
           height={150}

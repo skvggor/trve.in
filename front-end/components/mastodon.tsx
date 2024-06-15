@@ -15,10 +15,10 @@ export default function Mastodon() {
     ">
       <a
         className="mastodon-link"
-        rel={contentMastodon.rel}
-        href={contentMastodon.link}
+        rel={ contentMastodon.rel }
+        href={ contentMastodon.link }
       >
-        {contentMastodon.text}
+        { contentMastodon.text }
       </a>
     </div>
   );

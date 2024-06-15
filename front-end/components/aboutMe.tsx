@@ -1,23 +1,7 @@
 import { IAboutMe } from "@/types";
 
 export default function AboutMe() {
-  const problemWord = (
-    <span
-      key="problem"
-      className="inline-block
-      -rotate-2"
-    >
-      problem
-    </span>
-  );
-
-  const aboutMeContent: IAboutMe = {
-    title: [
-      "Low profile ",
-      problemWord,
-      " solver."
-    ],
-  };
+  const aboutMeContent: IAboutMe = { title: ["Keep in touch with me"] };
 
   return (
     <section
@@ -33,10 +17,10 @@ export default function AboutMe() {
         className="title
           font-bold
           text-2xl
-          text-white
+          text-yellow-100
           md:text-4xl"
       >
-        {aboutMeContent.title}
+        { aboutMeContent.title }
       </h2>
     </section>
   );

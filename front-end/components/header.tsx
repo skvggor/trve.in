@@ -27,15 +27,14 @@ export default async function Header() {
 
   const headerContent: IHeaderContent = {
     title: "skvggor",
-    currentPosition: [
-      "Senior Front-end Developer at ",
+    currentPosition: ["Father, cyclist, skateboarder & senior developer at ",
       <a
         key="employer"
         href="https://www.radixeng.com/"
         target="_blank"
         aria-label="New window link."
         className="link
-          text-green-500
+          text-yellow-500
           underline"
       >
         @radixeng
@@ -54,30 +53,12 @@ export default async function Header() {
   };
 
   const statusIndicators: Record<string, IStatusIndicator> = {
-    weekend: {
-      indicatorBg: "bg-green-500",
-      animate: "animate-ping",
-    },
-    sleep: {
-      indicatorBg: "bg-gray-400",
-      animate: "animate-none",
-    },
-    lunch: {
-      indicatorBg: "bg-yellow-500",
-      animate: "animate-none",
-    },
-    work: {
-      indicatorBg: "bg-red-700",
-      animate: "animate-none",
-    },
-    free: {
-      indicatorBg: "bg-green-500",
-      animate: "animate-ping",
-    },
-    listening: {
-      indicatorBg: "bg-violet-600",
-      animate: "animate-ping",
-    },
+    weekend: { indicatorBg: "bg-green-500", animate: "animate-ping" },
+    sleep: { indicatorBg: "bg-gray-400", animate: "animate-none" },
+    lunch: { indicatorBg: "bg-yellow-300", animate: "animate-ping" },
+    work: { indicatorBg: "bg-red-700", animate: "animate-ping" },
+    free: { indicatorBg: "bg-green-500", animate: "animate-ping" },
+    listening: { indicatorBg: "bg-violet-600", animate: "animate-ping" },
   };
 
   return (
@@ -104,10 +85,10 @@ export default async function Header() {
           md:w-32"
       >
         <Image
-          src={headerContent.image.src}
-          alt={headerContent.image.alt}
-          width={headerContent.image.width}
-          height={headerContent.image.height}
+          src={ headerContent.image.src }
+          alt={ headerContent.image.alt }
+          width={ headerContent.image.width }
+          height={ headerContent.image.height }
           className="image-avatar
             border-2
             border-gray-700
@@ -115,50 +96,45 @@ export default async function Header() {
             group-hover:border-gray-500
             p-0.5
             rounded-full
+            sepia
             transition-all"
         />
 
         <span
-          className={`icon-status
+          className={ `icon-status
             absolute
-            ${
-              statusIndicators[`${headerContent.statusFromAPI.status}`]
-                .indicatorBg
-            }
+            ${statusIndicators[`${headerContent.statusFromAPI.status}`].indicatorBg}
             border-[#020817]
             border-2
             bottom-2
             duration-500
             h-4
-            right-2
+            right-1
             rounded-full
             transition-all
             z-[2]
             w-4
             md:h-5
-            md:right-3
-            md:w-5`}
+            md:right-1
+            md:w-5` }
         />
         <span
-          className={`icon-status-ping
+          className={ `icon-status-ping
             absolute
             ${statusIndicators[`${headerContent.statusFromAPI.status}`].animate}
-            ${
-              statusIndicators[`${headerContent.statusFromAPI.status}`]
-                .indicatorBg
-            }
+            ${statusIndicators[`${headerContent.statusFromAPI.status}`].indicatorBg}
             bottom-2
             duration-1000
             ease-in-out
             h-4
-            right-2
+            right-1
             rounded-full
             transition
             w-4
             z-[1]
             md:h-5
-            md:right-3
-            md:w-5`}
+            md:right-1
+            md:w-5` }
         />
       </section>
 
@@ -167,7 +143,9 @@ export default async function Header() {
           flex
           flex-col
           items-center
+          w-full
           md:items-start
+          md:w-auto
         "
       >
         <h1
@@ -177,7 +155,7 @@ export default async function Header() {
             group-hover:text-white
             mb-3
             text-5xl
-            text-green-100
+            text-yellow-100
             transition-all
             uppercase
             md:mb-5
@@ -185,40 +163,47 @@ export default async function Header() {
             md:text-6xl
             md:tracking-tighter"
         >
-          {headerContent.title}
+          { headerContent.title }
         </h1>
 
         <section
           className="border-gradient
-            bg-gradient-to-r from-green-900 to-green-300
+            bg-gradient-to-r from-yellow-900 to-yellow-300
             px-px
             py-px
-            rounded-full"
+            rounded-full
+            w-full
+            md:w-auto"
         >
           <section
             className="bg-[#020817]
+              flex
+              place-content-center
               px-4
               py-px
-              rounded-full"
+              rounded-full
+              w-full
+              md:w-auto"
           >
             <h2
               className="current-position
                 font-normal
                 group-hover:text-white
                 text-center
-                text-green-100
                 text-lg
+                text-yellow-100
                 transition-all
                 md:text-xl
-                md:tracking-tight"
+                md:tracking-tight
+                md:w-auto"
             >
-              {headerContent.currentPosition}
+              { headerContent.currentPosition }
             </h2>
           </section>
         </section>
 
         <section className="holder-status">
-          <Status dataFromAPI={headerContent.statusFromAPI} />
+          <Status dataFromAPI={ headerContent.statusFromAPI } />
         </section>
       </section>
     </header>

@@ -16,43 +16,79 @@ export default function Social() {
         id: 1,
         title: "GitHub",
         href: "https://github.com/skvggor",
-        icon: <GithubIcon color="#22c55e" width={24} height={24} />,
+        icon: (
+          <GithubIcon
+            color="#eab308"
+            width={ 24 }
+            height={ 24 }
+          />
+        ),
       },
       {
         id: 2,
         title: "LeetCode",
         href: "https://leetcode.com/skvggor/",
-        icon: <Code2 color="#22c55e" width={24} height={24} />,
+        icon: (
+          <Code2
+            color="#eab308"
+            width={ 24 }
+            height={ 24 }
+          />
+        ),
       },
       {
         id: 3,
         title: "LinkedIn",
         href: "https://www.linkedin.com/in/marcker",
-        icon: <Linkedin color="#22c55e" width={24} height={24} />,
+        icon: (
+          <Linkedin
+            color="#eab308"
+            width={ 24 }
+            height={ 24 }
+          />
+        ),
       },
       {
         id: 4,
         title: "Twitter",
         href: "https://twitter.com/skvggor",
-        icon: <Twitter color="#22c55e" width={24} height={24} />,
+        icon: (
+          <Twitter
+            color="#eab308"
+            width={ 24 }
+            height={ 24 }
+          />
+        ),
       },
       {
         id: 5,
         title: "Strava",
         href: "https://www.strava.com/athletes/18616728",
-        icon: <Bike color="#22c55e" width={24} height={24} />,
+        icon: (
+          <Bike
+            color="#eab308"
+            width={ 24 }
+            height={ 24 }
+          />
+        ),
       },
       {
         id: 6,
         title: "Last.fm",
         href: "https://last.fm/user/skvggor",
-        icon: <Disc3 color="#22c55e" width={24} height={24} />,
+        icon: (
+          <Disc3
+            color="#eab308"
+            width={ 24 }
+            height={ 24 }
+          />
+        ),
       },
     ],
   };
 
   const renderSocialLinks = socialContent.links.map((link) => (
-    <li key={link.id} className="item">
+    <li key={ link.id } className="item">
       <a
         className="link
           block
@@ -60,17 +96,17 @@ export default function Social() {
           hover:outline-white
           outline
           outline-2
-          outline-green-500
+          outline-yellow-500
           outline-offset-1
           p-2
           rounded-full
           transition-all"
-        href={link.href}
-        title={link.title}
+        href={ link.href }
+        title={ link.title }
         target="_blank"
         rel="noopener noreferrer"
       >
-        {link.icon}
+        { link.icon }
       </a>
     </li>
   ));
@@ -90,7 +126,7 @@ export default function Social() {
           grid-cols-6
           md:gap-x-6"
       >
-        {renderSocialLinks}
+        { renderSocialLinks }
       </ul>
     </section>
   );
