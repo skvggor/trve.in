@@ -172,7 +172,7 @@ export default async function Header() {
             px-px
             py-px
             rounded-full
-            w-full
+            w-100%
             md:w-auto"
         >
           <section
@@ -182,7 +182,7 @@ export default async function Header() {
               px-4
               py-px
               rounded-full
-              w-full
+              w-[100%]
               md:w-auto"
           >
             <h2
@@ -193,6 +193,8 @@ export default async function Header() {
                 text-lg
                 text-yellow-100
                 transition-all
+                max-w-[250px]
+                md:max-w-[100%]
                 md:text-xl
                 md:tracking-tight
                 md:w-auto"
