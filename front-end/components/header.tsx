@@ -41,7 +41,7 @@ export default async function Header() {
       </a>,
     ],
     image: {
-      src: "/avatar.webp",
+      src: "/peruibe.webp",
       alt: "avatar",
       width: 200,
       height: 200,
