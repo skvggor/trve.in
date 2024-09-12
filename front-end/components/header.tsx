@@ -41,7 +41,7 @@ export default async function Header() {
       </a>,
     ],
     image: {
-      src: "/peruibe.webp",
+      src: "/running-parque-oriental.webp",
       alt: "avatar",
       width: 200,
       height: 200,
@@ -85,10 +85,10 @@ export default async function Header() {
           md:w-32"
       >
         <Image
-          src={ headerContent.image.src }
-          alt={ headerContent.image.alt }
-          width={ headerContent.image.width }
-          height={ headerContent.image.height }
+          src={headerContent.image.src}
+          alt={headerContent.image.alt}
+          width={headerContent.image.width}
+          height={headerContent.image.height}
           className="image-avatar
             border-2
             border-gray-700
@@ -96,12 +96,12 @@ export default async function Header() {
             group-hover:border-gray-500
             p-0.5
             rounded-full
-            sepia
+            sepia-[.75]
             transition-all"
         />
 
         <span
-          className={ `icon-status
+          className={`icon-status
             absolute
             ${statusIndicators[`${headerContent.statusFromAPI.status}`].indicatorBg}
             border-[#020817]
@@ -119,7 +119,7 @@ export default async function Header() {
             md:w-5` }
         />
         <span
-          className={ `icon-status-ping
+          className={`icon-status-ping
             absolute
             ${statusIndicators[`${headerContent.statusFromAPI.status}`].animate}
             ${statusIndicators[`${headerContent.statusFromAPI.status}`].indicatorBg}
@@ -163,7 +163,7 @@ export default async function Header() {
             md:text-6xl
             md:tracking-tighter"
         >
-          { headerContent.title }
+          {headerContent.title}
         </h1>
 
         <section
@@ -199,13 +199,13 @@ export default async function Header() {
                 md:tracking-tight
                 md:w-auto"
             >
-              { headerContent.currentPosition }
+              {headerContent.currentPosition}
             </h2>
           </section>
         </section>
 
         <section className="holder-status">
-          <Status dataFromAPI={ headerContent.statusFromAPI } />
+          <Status dataFromAPI={headerContent.statusFromAPI} />
         </section>
       </section>
     </header>

@@ -1,7 +1,7 @@
 import {
-  Bike,
-  Code2,
-  Disc3,
+  Medal,
+  FileCode,
+  AudioLines,
   GithubIcon,
   Linkedin,
   Twitter,
@@ -19,8 +19,8 @@ export default function Social() {
         icon: (
           <GithubIcon
             color="#eab308"
-            width={ 24 }
-            height={ 24 }
+            width={24}
+            height={24}
           />
         ),
       },
@@ -29,10 +29,10 @@ export default function Social() {
         title: "LeetCode",
         href: "https://leetcode.com/skvggor/",
         icon: (
-          <Code2
+          <FileCode
             color="#eab308"
-            width={ 24 }
-            height={ 24 }
+            width={24}
+            height={24}
           />
         ),
       },
@@ -43,8 +43,8 @@ export default function Social() {
         icon: (
           <Linkedin
             color="#eab308"
-            width={ 24 }
-            height={ 24 }
+            width={24}
+            height={24}
           />
         ),
       },
@@ -55,8 +55,8 @@ export default function Social() {
         icon: (
           <Twitter
             color="#eab308"
-            width={ 24 }
-            height={ 24 }
+            width={24}
+            height={24}
           />
         ),
       },
@@ -65,10 +65,10 @@ export default function Social() {
         title: "Strava",
         href: "https://www.strava.com/athletes/18616728",
         icon: (
-          <Bike
+          <Medal
             color="#eab308"
-            width={ 24 }
-            height={ 24 }
+            width={24}
+            height={24}
           />
         ),
       },
@@ -77,10 +77,10 @@ export default function Social() {
         title: "Last.fm",
         href: "https://last.fm/user/skvggor",
         icon: (
-          <Disc3
+          <AudioLines
             color="#eab308"
-            width={ 24 }
-            height={ 24 }
+            width={24}
+            height={24}
           />
         ),
       },
@@ -88,7 +88,7 @@ export default function Social() {
   };
 
   const renderSocialLinks = socialContent.links.map((link) => (
-    <li key={ link.id } className="item">
+    <li key={link.id} className="item">
       <a
         className="link
           block
@@ -101,12 +101,12 @@ export default function Social() {
           p-2
           rounded-full
           transition-all"
-        href={ link.href }
-        title={ link.title }
+        href={link.href}
+        title={link.title}
         target="_blank"
         rel="noopener noreferrer"
       >
-        { link.icon }
+        {link.icon}
       </a>
     </li>
   ));
@@ -126,7 +126,7 @@ export default function Social() {
           grid-cols-6
           md:gap-x-6"
       >
-        { renderSocialLinks }
+        {renderSocialLinks}
       </ul>
     </section>
   );
