@@ -1,2 +1,3 @@
-# rust-api-axum
-Playground to learning RESTful APIs using Rust.
+# trve.in | skvggor.dev
+
+Playground to learning.
