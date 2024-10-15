@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import AboutMe from "@/components/aboutMe";
 import Social from "@/components/social";
-import Cycling from "@/components/cycling";
+import Running from "@/components/running";
 import Listening from "@/components/listening";
 import MadeBy from "@/components/madeBy";
 import Mastodon from "@/components/mastodon";
@@ -52,7 +52,7 @@ export default function Home() {
             max-w-[1024px]
             md:flex-row"
         >
-          <Cycling />
+          <Running />
           <Listening />
         </div>
 

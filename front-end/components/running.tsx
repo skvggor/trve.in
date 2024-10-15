@@ -1,7 +1,7 @@
-import { Bike } from "lucide-react";
+import { DirectionsRun } from "@mui/icons-material";
 
 import Loading from "@/components/loading";
-import { ICycling } from "@/types";
+import { IRunning } from "@/types";
 
 async function getData() {
   try {
@@ -18,19 +18,19 @@ async function getData() {
 
     return response.json();
   } catch (error) {
-    console.error("components/cycling", error);
+    console.error("components/running", error);
   }
 }
 
-export default async function Cycling() {
-  const cyclingContent: ICycling = {
+export default async function Running() {
+  const runningContent: IRunning = {
     currentYear: new Date().getFullYear(),
     distance: await getData().then((data) => data?.distance),
   };
 
-  return cyclingContent.distance ? (
+  return runningContent.distance ? (
     <div
-      className="cycling
+      className="running
         flex
         flex-row
         items-center
@@ -47,13 +47,14 @@ export default async function Cycling() {
     >
       <div
         className="icon
-          mr-3
-          -rotate-45"
+          mr-3"
       >
-        <Bike
-          color="#eab308"
-          width={ 28 }
-          height={ 28 }
+        <DirectionsRun
+          sx={{
+            color: "#eab308",
+            width: 40,
+            height: 40,
+          }}
         />
       </div>
 
@@ -69,7 +70,7 @@ export default async function Cycling() {
             text-sm
             text-white"
         >
-          { cyclingContent.currentYear }
+          { runningContent.currentYear }
         </h3>
 
         <span
@@ -78,7 +79,7 @@ export default async function Cycling() {
             text-lg
             text-white/50"
         >
-          { cyclingContent.distance } km
+          { runningContent.distance } km
         </span>
       </div>
     </div>

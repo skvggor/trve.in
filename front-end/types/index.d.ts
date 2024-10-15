@@ -58,7 +58,7 @@ export interface IMadeBy {
   author: string;
 }
 
-export interface ICycling {
+export interface IRunning {
   currentYear: number;
   distance: string;
 }

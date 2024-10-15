@@ -27,7 +27,7 @@ export default async function Header() {
 
   const headerContent: IHeaderContent = {
     title: "skvggor",
-    currentPosition: ["Father, cyclist, skateboarder & senior developer at ",
+    currentPosition: ["Father, runner, cyclist, skateboarder & senior developer at ",
       <a
         key="employer"
         href="https://www.radixeng.com/"
