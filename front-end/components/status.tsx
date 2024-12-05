@@ -12,12 +12,12 @@ import { IStatus, IStatusData, IStatusComponentProps } from "@/types";
 
 const statuses: Record<string, IStatus> = {
   weekend: {
-    color: "text-yellow-500",
+    color: "text-sky-500",
     text: "Enjoying the weekend.",
     icon: (
       <Laugh
         className="mr-1"
-        color="#eab308"
+        color="#0ea5e9"
         height={ 24 }
         width={ 24 }
       />
@@ -36,12 +36,12 @@ const statuses: Record<string, IStatus> = {
     ),
   },
   lunch: {
-    color: "text-yellow-500",
+    color: "text-sky-500",
     text: "Having lunch.",
     icon: (
       <BatteryCharging
         className="mr-1"
-        color="#eab308"
+        color="#0ea5e9"
         height={ 24 }
         width={ 24 }
       />
@@ -60,12 +60,12 @@ const statuses: Record<string, IStatus> = {
     ),
   },
   free: {
-    color: "text-yellow-500",
+    color: "text-sky-500",
     text: "Enjoying the life.",
     icon: (
       <Bike
         className="mr-1"
-        color="#eab308"
+        color="#0ea5e9"
         height={ 24 }
         width={ 24 }
       />
@@ -98,10 +98,8 @@ export default async function Status({ dataFromAPI }: IStatusComponentProps) {
         center-x
         flex
         items-center
-        mt-2
         text-gray-600
-        w-full
-        md:ml-4"
+        w-full"
     >
       <span
         className={ `flex

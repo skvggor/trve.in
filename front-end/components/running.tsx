@@ -51,7 +51,7 @@ export default async function Running() {
       >
         <DirectionsRun
           sx={{
-            color: "#eab308",
+            color: "#0ea5e9",
             width: 40,
             height: 40,
           }}

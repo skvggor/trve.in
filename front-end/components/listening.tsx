@@ -101,9 +101,9 @@ export default async function Listening() {
             mb-3
             p-2
             ring-1
-            ring-yellow-400
+            ring-sky-400
             rounded-full
-            text-yellow-500
+            text-sky-500
             text-xs
             uppercase"
         >

@@ -18,7 +18,7 @@ export default function Social() {
         href: "https://github.com/skvggor",
         icon: (
           <GithubIcon
-            color="#eab308"
+            color="#0ea5e9"
             width={24}
             height={24}
           />
@@ -30,7 +30,7 @@ export default function Social() {
         href: "https://leetcode.com/skvggor/",
         icon: (
           <FileCode
-            color="#eab308"
+            color="#0ea5e9"
             width={24}
             height={24}
           />
@@ -42,7 +42,7 @@ export default function Social() {
         href: "https://www.linkedin.com/in/marcker",
         icon: (
           <Linkedin
-            color="#eab308"
+            color="#0ea5e9"
             width={24}
             height={24}
           />
@@ -54,7 +54,7 @@ export default function Social() {
         href: "https://twitter.com/skvggor",
         icon: (
           <Twitter
-            color="#eab308"
+            color="#0ea5e9"
             width={24}
             height={24}
           />
@@ -66,7 +66,7 @@ export default function Social() {
         href: "https://www.strava.com/athletes/18616728",
         icon: (
           <Medal
-            color="#eab308"
+            color="#0ea5e9"
             width={24}
             height={24}
           />
@@ -78,7 +78,7 @@ export default function Social() {
         href: "https://last.fm/user/skvggor",
         icon: (
           <AudioLines
-            color="#eab308"
+            color="#0ea5e9"
             width={24}
             height={24}
           />
@@ -96,7 +96,7 @@ export default function Social() {
           hover:outline-white
           outline
           outline-2
-          outline-yellow-500
+          outline-sky-500
           outline-offset-1
           p-2
           rounded-full

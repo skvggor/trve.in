@@ -19,7 +19,7 @@ export default function Home() {
         px-3
         md:pt-20
         md:px-5
-        tall:min-h-[200dvh]"
+        tall:min-h-[768px]"
     >
       <Header />
 
