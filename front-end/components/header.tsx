@@ -27,21 +27,21 @@ export default async function Header() {
 
   const headerContent: IHeaderContent = {
     title: "skvggor",
-    currentPosition: ["Father, runner, cyclist, skateboarder & senior developer at ",
+    currentPosition: ["Father — street runner — skateboarder — senior dev at ",
       <a
         key="employer"
         href="https://www.radixeng.com/"
         target="_blank"
         aria-label="New window link."
         className="link
-          text-yellow-500
+          text-sky-500
           underline"
       >
         @radixeng
       </a>,
     ],
     image: {
-      src: "/running-parque-oriental.webp",
+      src: "/blue-hair.jpg",
       alt: "avatar",
       width: 200,
       height: 200,
@@ -55,7 +55,7 @@ export default async function Header() {
   const statusIndicators: Record<string, IStatusIndicator> = {
     weekend: { indicatorBg: "bg-green-500", animate: "animate-ping" },
     sleep: { indicatorBg: "bg-gray-400", animate: "animate-none" },
-    lunch: { indicatorBg: "bg-yellow-300", animate: "animate-ping" },
+    lunch: { indicatorBg: "bg-sky-300", animate: "animate-ping" },
     work: { indicatorBg: "bg-red-700", animate: "animate-ping" },
     free: { indicatorBg: "bg-green-500", animate: "animate-ping" },
     listening: { indicatorBg: "bg-violet-600", animate: "animate-ping" },
@@ -96,7 +96,6 @@ export default async function Header() {
             group-hover:border-gray-500
             p-0.5
             rounded-full
-            sepia-[.75]
             transition-all"
         />
 
@@ -153,12 +152,10 @@ export default async function Header() {
             duration-500
             font-medium
             group-hover:text-white
-            mb-3
             text-5xl
-            text-yellow-100
+            text-sky-300
             transition-all
             uppercase
-            md:mb-5
             md:ml-3
             md:text-6xl
             md:tracking-tighter"
@@ -168,18 +165,20 @@ export default async function Header() {
 
         <section
           className="border-gradient
-            bg-gradient-to-r from-yellow-900 to-yellow-300
+            bg-gradient-to-r from-sky-900 to-sky-300
+            my-5
             px-px
             py-px
             rounded-full
             w-100%
+            md:my-2
             md:w-auto"
         >
           <section
             className="bg-[#020817]
               flex
               place-content-center
-              px-4
+              px-3
               py-px
               rounded-full
               w-[100%]
@@ -191,9 +190,11 @@ export default async function Header() {
                 group-hover:text-white
                 text-center
                 text-lg
-                text-yellow-100
+                text-sky-300
                 transition-all
+                leading-none
                 max-w-[250px]
+                py-2.5
                 md:max-w-[100%]
                 md:text-xl
                 md:tracking-tight
@@ -204,7 +205,7 @@ export default async function Header() {
           </section>
         </section>
 
-        <section className="holder-status">
+        <section className="holder-status ml-3">
           <Status dataFromAPI={headerContent.statusFromAPI} />
         </section>
       </section>

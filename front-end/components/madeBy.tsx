@@ -14,7 +14,7 @@ export default function MadeBy() {
     >
       <span
         className="line
-          bg-yellow-500
+          bg-sky-500
           block
           h-0.5
           rounded-full
@@ -32,7 +32,7 @@ export default function MadeBy() {
         <a
           className="link
             duration-500
-            hover:text-yellow-500
+            hover:text-sky-500
             transition-all
             underline"
           href="https://github.com/skvggor"
@@ -45,7 +45,7 @@ export default function MadeBy() {
 
       <span
         className="line
-          bg-yellow-500
+          bg-sky-500
           block
           h-0.5
           rounded-full

@@ -17,7 +17,7 @@ export default function AboutMe() {
         className="title
           font-bold
           text-2xl
-          text-yellow-100
+          text-sky-300
           md:text-4xl"
       >
         { aboutMeContent.title }

@@ -40,7 +40,7 @@ export default function Loading({ serviceName }: LoadingProps) {
             className="animate-spin
               duration-500
               mr-3"
-            color="#eab308"
+            color="#0ea5e9"
             width={ 32 }
             height={ 32 }
           />
